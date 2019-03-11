@@ -6,23 +6,28 @@ void fucn(int *arr,int *arr2,int i)
 {
 //	cout<<sizeof(arr)/2<<endl;
 //cout<<i<<endl;
+//cout<<arr2[0]<<endl;
 	if(i==sizeof(arr)/2)
 	{
+		int count=0;
 		for(int j=0;j<sizeof(arr2)/2;j++)
 		{
 			if(arr2[j]!=-2)
 			{
 			cout<<arr2[j];
+			count++;
+			
 			}
 			
 		}
-		//cout<<"Ashu"<<endl;
+		if(count>0)
 		cout<<endl;
 		return;
 	}
+	//
 	else
 	{
-		arr2[i]=NULL;
+		arr2[i]=-2;
 		fucn (arr,arr2,i+1);
 		
 		arr2[i]=arr[i];
@@ -39,7 +44,7 @@ int *arr2=new int[n];
 for(int i=0;i<n;i++)
 {
 	cin>>arr[i];
-	arr2[i]=-2;
+	arr2[i]=-1;
 	
 }
 
