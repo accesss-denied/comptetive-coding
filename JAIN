@@ -1,0 +1,105 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int fucn(int n)
+{int count =0,count2=0;
+		string s[n];
+		string s2[n];
+		int s3[32];
+	int	base=16;
+	int d=0;
+		
+	for(int i=0;i<n;i++)
+	{
+		cin>>s[i];
+		s2[i]="00000";
+	//	s3[i]=0;
+	}
+	for(int i=0;i<32;i++)
+	{
+		
+		s3[i]=0;
+	}
+	//cout<<s[1];
+	//return 0;
+	for(int i=0;i<n;i++)
+	{
+		
+			size_t found = s[i].find('a'); 
+		if(found>=0 && found<=s[i].size())
+		{
+			s2[i][0]='1';
+		}
+		size_t found1 = s[i].find('e'); 
+		if(found1>=0 && found1<=s[i].size())
+		{
+				s2[i][1]='1';
+		}
+		size_t found2= s[i].find('i'); 
+		if(found2>=0 && found2<=s[i].size())
+		{
+			s2[i][2]='1';
+		}
+		size_t found3= s[i].find('o'); 
+		if(found3>=0 && found3<=s[i].size())
+		{
+				s2[i][3]='1';
+		}
+		size_t found4=s[i].find('u'); 
+		
+		if(found4>=0 && found4<=s[i].size())
+		{
+			s2[i][4]='1';
+		}
+	//	cout<<s2[i]<<endl;
+	}
+	for(int i=0;i<n;i++)
+	{
+		d=0;
+		base=16;
+		for(int j=0;j<5;j++)
+		{
+			if(s2[i][j]=='1')
+			{
+				 
+            d =d+ base; 
+        
+			}base = base/2; 
+		}
+	
+	//	cout<<d<<endl;
+		if(d>0 && d<32)
+		{
+			s3[d]=1;
+		}
+		
+			
+	}
+	for(int i=0;i<32;i++)
+	{
+		cout<<s3[i]<<endl;
+	}
+	
+	
+	
+	
+	
+	return 0;
+}
+
+
+int main() {
+	int t,n;
+	cin>>t;
+while (t)
+{
+	cin>>n;
+	fucn (n);
+	t--;
+}
+	
+	
+	return 0;
+}
