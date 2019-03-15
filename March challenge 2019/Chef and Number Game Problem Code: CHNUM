@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+
+int
+function ()
+{
+  int n, x, c1=0,c2=0;
+  cin >> n;
+  while (n)
+    {
+      cin >> x;
+      if (x < 0)
+	{
+	  
+	  c1++;
+	}
+      if (x >= 0)
+	{
+	  
+	  c2++;
+	}
+      n--;
+    }
+  if (c1 != 0 && c2 != 0)
+    {
+      if (c1 > c2)
+	{
+	  cout << c1 << " " << c2 << endl;
+	}
+      if (c1 < c2)
+	{
+	  cout << c2 << " " << c1 << endl;
+	}
+    }
+  if (c1 == 0 || c2 == 0)
+    {
+      if (c1 == 0)
+	{
+	  cout << c2 << " " << c2 << endl;
+	}
+      if (c2 == 0)
+	{
+	  cout << c1 << " " << c1 << endl;
+	}
+    }
+  return 0;
+}
+
+int main ()
+{
+
+ int t;
+  cin >> t;
+
+  while (t)
+    {
+      function ();
+      t--;
+    }
+
+
+  return 0;
+}
