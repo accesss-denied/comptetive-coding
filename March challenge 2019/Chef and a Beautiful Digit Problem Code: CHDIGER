@@ -1,0 +1,105 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int
+fucn ()
+{
+  long long int n, d, count = 0, o, o1;
+  int r, y, i = 0, j, o22, p22, o2, p2;
+  string n2, r4, d2, n3;
+  size_t found;
+  cin >> n;
+  cin >> d;
+  n2 = std::to_string (n);
+  n3 = n2;
+  d2 = std::to_string (d);
+
+  count = d2.length ();
+
+
+  o2 = 0;
+  o22 = 0;
+  p22 = 1;
+  p2 = 1;
+  if (n3[o2] > n3[p2])
+    {
+      r = o2;
+    }
+  else
+    {
+      while (n3[o22] <= n3[p22])
+	{
+	  r = p22;
+	  o22++;
+	  p22++;
+	}
+    }
+
+
+  n3.erase (n3.begin () + r);
+  n3 = n3 + d2;
+  i++;
+count = count - 1;
+
+  stringstream known (n2);
+  known >> o;
+  stringstream known1 (n3);
+  known1 >> o1;
+
+  if (o < o1)
+    {
+      n3 = n2;
+
+    }
+  while (o1 < o)
+    {
+      n2 = n3;
+
+      o2 = 0;
+      o22 = 0;
+      p22 = 1;
+      p2 = 1;
+      if (n3[o2] > n3[p2])
+	{
+	  r = o2;
+	}
+      else
+	{
+	  while (n3[o22] <= n3[p22])
+	    {
+	      r = p22;
+	      o22++;
+	      p22++;
+	    }
+	}
+ n3.erase (n3.begin () + r);
+      n3 = n3 + d2;
+
+
+      i++;
+      count--;
+
+      stringstream known (n2);
+      known >> o;
+      stringstream known1 (n3);
+      known1 >> o1;
+    }
+
+  cout << n3 << endl;
+
+  return 0;
+}
+
+int
+main ()
+{
+  int t;
+  cin >> t;
+  while (t)
+    {
+      fucn ();
+      t--;
+    }
+  return 0;
+}
