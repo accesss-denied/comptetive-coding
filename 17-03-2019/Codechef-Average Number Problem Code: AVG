@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+#define ll long long
+int fucn()
+{
+	ll int n,k,v;
+	ll int y=0,y2=0,y3=0;
+	cin>>n>>k>>v;
+		ll int sum=0;
+	ll int *arr=new ll int[n];
+	for(ll int i=0;i<n;i++)
+	{
+		cin>>arr[i];
+		sum+=arr[i];
+	}
+	y=(v*(n+k)-sum);
+	y3=y%k;
+	y2=y/k;
+	if(y2>0 && y3==0 )
+	{
+		cout<<y2<<endl;
+	}
+	else
+	{
+		cout<<"-1"<<endl;
+	}
+
+}
+
+int main() {
+	ll int t;
+	cin>>t;
+	while (t)
+	{
+		fucn();
+		t--;
+	}
+}
