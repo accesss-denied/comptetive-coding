@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#define ll long long int
+
+using namespace std;
+
+int main() {
+	ll t,a,x;
+	cin>>t;
+	while(t)
+	{
+		cin>>a;
+		for(ll i=1;i<INT_MAX;i++)
+		{
+			ll y=pow(2,i)-1;
+			if(i*a-y>0)
+			{
+				x=i;
+			}
+			else
+			break;
+		}
+		//cout<<x<<endl;
+		ll sum1=a-1;
+		ll sum2=0;
+		ll z=1;
+			for(ll i=2;i<INT_MAX;i++)
+		{
+			ll y=pow(2,i)-1;
+			sum2=a*i-y;
+			if(sum2>sum1)
+			{
+				sum1=sum2;
+				z=i;
+				
+			}
+			else
+			break;
+		}
+		
+		
+		
+		cout<<x<<" "<<z<<endl;
+		
+		t--;
+	}
+
+	return 0;
+}
