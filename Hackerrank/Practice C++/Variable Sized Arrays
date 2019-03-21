@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+int a,b,c,d,e,f,g=0;
+vector<int>arr;
+int j=0,count=0;
+cin>>a>>b;
+vector<int>arr2;
+for(int i=0;i<a;i++)
+{
+	cin>>f;
+	//cout<<f;
+	g=g+f;
+	//arr2[i]=g;
+	arr2.push_back(g);
+	for(j=0;j<f;j++)
+	{
+		cin>>count;
+		arr.push_back(count);
+		//count++;
+	}
+	//j=arr2[f];
+	
+	
+
+	
+	
+}
+
+for(int i=0;i<8;i++)
+{
+//	cout<<arr[i]<<" ";
+}
+
+
+
+while(b)
+{
+	cin>>d;
+	cin>>e;
+	if(d==0)
+	{
+		cout<<arr[e]<<endl;
+	}
+	else
+	{
+	int h=arr2[d-1];
+	cout<<arr[h+e]<<endl;
+	
+	
+	
+	}
+	b--;
+}
+
+	return 0;
+}
