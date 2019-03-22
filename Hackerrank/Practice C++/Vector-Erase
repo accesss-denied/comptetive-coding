@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin>>n;
+    vector<int> v1;
+    for(int i=0;i<n;i++ )
+    {
+    int temo;
+    cin>>temo;
+    v1.push_back(temo);
+    }
+    int a,b,c;
+    cin>>a>>b>>c;
+    
+    a=a-1;
+    v1.erase(v1.begin()+a);
+    // a=a-1;
+    //b=b-1;
+    //cout<<a<<b;
+    b=b-1;
+    //c=c+1;
+    c=c-1;
+    
+   //cout<<b<<c;
+    v1.erase(v1.begin()+b,v1.begin()+c);
+    cout<<v1.size()<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+    cout<<v1[i]<<" ";
+        }
+    return 0;
+}
