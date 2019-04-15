@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define el endl;
+
+int fucn()
+{
+ll n,count=0,count2=0;
+string s;char b;
+cin>>n>>s>>b;
+ll n2=s.size();
+for(ll i=0;i<n2;i++)
+{
+	if(s[i]==b)
+	{
+	
+	count+=i+1;	
+	break;
+	}
+	
+}
+count2=count;
+for(ll i=count;i<n2;i++)
+{
+	if(s[i]==b)
+	{
+		count=i+1;
+		count2+=count;
+	}
+	else
+	{
+		count2+=count;
+	}
+}
+	
+	cout<<count2<<el;
+return 0;
+
+}
+
+
+int main() {
+int t;
+cin>>t;
+while (t)
+{
+	fucn();
+	t--;
+}
+	return 0;
+}
