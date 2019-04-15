@@ -1,0 +1,271 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+#define el endl
+int fucn2(int n,int m,int k)
+{
+//	ll n,m,k;
+	ll r,c,temp=0;
+//	cin>>n>>m>>k;
+	int** arr = new int*[n];
+	
+for(ll i = 0; i <n; ++i)
+    arr[i] = new int[m]; 
+	
+	for(ll i=0;i<k;i++)
+	{
+		cin>>r>>c;
+		int x=c;
+		string s=to_string(x);
+		x=s.length();
+		//cout<<x;
+		temp=r*(x*10)+c;
+		arr[r-1][c-1]=temp;
+	}
+	ll count=0,a=0,b=0;
+	for(ll i=0;i<n;i++)
+	{
+	for(ll j=0;j<m;j++)
+	{
+		if(arr[i][j]!=0)
+		{
+			
+		count+=4;
+		if(j<m-1){
+			if(arr[i][j+1]!=0)
+			{
+			count-=1;
+			}}
+			if(i>0){
+					if(arr[i-1][j]!=0)
+				{
+				count-=1;
+				}}
+				if(j>0)
+				{
+					if(arr[i][j-1]!=0 )
+				{
+					count-=1;
+			}
+				}
+		if(i<n-1)
+		{
+				if(arr[i+1][j]!=0)
+				{
+					count-=1;
+				}
+		}
+		
+		}
+	}
+		
+		
+		
+	}
+	
+	cout<<count<<el;
+	
+	
+	return 0;
+}
+
+
+
+int fucn()
+{
+	
+		ll n,m1,k;
+	ll r,c,temp=0,count7=0,o=0,o2=0;
+	cin>>n>>m1>>k;
+	
+	if(n<=1000 && m1<=1000)
+	{
+		fucn2(n,m1,k);
+	}
+	else
+	{
+	
+		ll *arr=new ll[k];
+			ll *arr2=new ll[k];
+			ll *arr3=new ll[k];
+			
+		for(ll i=0;i<k;i++)
+	{
+		cin>>r>>c;
+		ll x=c;
+		string s=to_string(x);
+		x=s.length();
+		//cout<<x;
+		temp=r*(pow(10,x))+c;
+		if(r>=0 && r<=n)
+		{
+			if(c>=0 && c<=m1)
+			{
+				arr[o++]=temp;
+				arr2[o2++]=x;
+				count7++;
+			}
+		}
+	}
+	
+	temp=o;
+	for(ll i=0;i<k-o;o++)
+	{
+		arr[o++]=0;
+	}
+	
+	for(ll i=0;i<k;i++)
+	{
+		arr3[i]=arr[i];
+	}
+	
+	sort(arr3,arr3+temp);
+	
+	ll count =0;
+	count=4*temp;
+	
+	// for(ll i=0;i<k;i++)
+	// {
+	// cout<<arr3[i]<<"     "<<arr2[i]<<el;
+	
+	// }
+	
+	for(ll i=0;i<temp;i++)
+	{
+		ll r2=k-1;
+		ll l=0;
+		ll m,count2=0;
+		ll temp2;
+		temp2=arr[i];
+			r=temp2+1;
+		 while (l <= r2) { 
+        m = (l+r2)/2; 
+ 
+        if (arr3[m] == r) 
+        {
+        	count-=1;
+        	//cout<<"ashu";
+        	 break; 
+        }
+ 
+        if (arr3[m] < r) 
+        {
+            l = m + 1; 
+        }
+        else
+        {
+            r2 = m - 1; 
+        }
+    } 
+    
+    
+    
+    
+    
+    
+    	r2=k-1;
+		l=0;
+		
+	
+	//	temp2=arr3[i];
+			r=temp2-1;
+		 while (l <= r2) { 
+        m = (l+r2)/2; 
+ 
+        if (arr3[m] == r) 
+        {
+        	count-=1;
+        	//cout<<"ashu";
+        	 break; 
+        }
+ 
+        if (arr3[m] < r) 
+        {
+            l = m + 1; 
+        }
+        else
+        {
+            r2 = m - 1; 
+        }
+    } 
+    
+    
+    
+    	r2=k-1;
+		l=0;
+		
+	
+	//	temp2=arr3[i];
+			r=temp2+(pow(10,arr2[i]));
+		 while (l <= r2) { 
+        m = (l+r2)/2; 
+ 
+        if (arr3[m] == r) 
+        {
+        	count-=1;
+        	//cout<<"ashu";
+        	 break; 
+        }
+ 
+        if (arr3[m] < r) 
+        {
+            l = m + 1; 
+        }
+        else
+        {
+            r2 = m - 1; 
+        }
+    } 
+		
+		
+    	r2=k-1;
+		l=0;
+		
+	
+		temp2=arr[i];
+			r=temp2-(pow(10,arr2[i]));
+		 while (l <= r2) { 
+        m = (l+r2)/2; 
+ 
+        if (arr3[m] == r) 
+        {
+        	count-=1;
+        	//cout<<"ashu";
+        	 break; 
+        }
+ 
+        if (arr3[m] < r) 
+        {
+            l = m + 1; 
+        }
+        else
+        {
+            r2 = m - 1; 
+        }
+    } 
+		
+		
+		
+	}
+	cout<<count<<el;
+	}
+	
+	return 0;
+}
+
+
+
+
+
+int main() {
+	int t;
+	cin>>t;
+	while (t)
+	{
+		fucn();
+		t--;
+	}
+
+
+	return 0;
+}
