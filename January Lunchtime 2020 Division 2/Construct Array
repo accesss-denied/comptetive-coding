@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define llu unsigned long long int
+#define pb push_back
+#define vi vector<int>
+#define translow transform(s.begin(),s.end(),s.begin(),::tolower);
+#define transup transform(s.begin(),s.end(),s.begin(),::toupper);
+#define endl "\n"
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+ll mod=1000000007;
+int main() {
+				fast
+			ll t;
+			cin>>t;
+			while(t--)
+			{
+				
+				ll n,m;
+				cin>>n>>m;
+				if(n==1)
+				{
+					m=m%mod;
+					cout<<m<<endl;
+					
+				}
+				else
+				{
+					m=m%mod;
+					ll y=(m*m)%mod;
+					ll x=m;
+					
+					
+					for(ll i=3;i<=n;i++)
+					{
+						ll temp=y;
+						y=(y*m)-x;
+						y=(y+mod)%mod;
+						x=temp-x;
+						x=(x+mod)%mod;
+					}
+					y=(y+mod)%mod;
+					cout<<y<<endl;
+				
+			}
+				
+			}
+			
+	return 0;
+}
