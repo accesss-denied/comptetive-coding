@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define ff first
+#define ss second
+#define pb push_back
+#define endl "\n"
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+ll mod=1e9+7;			
+
+			struct Node {
+				ll data;
+				Node * next;
+			};
+	   
+int main() {
+			fast
+			#ifndef ONLINE_JUDGE
+			freopen("input.txt","r",stdin);
+			freopen("output.txt","w",stdout);
+			#endif
+
+			Node* head; //pointer of a  type structure Node
+			head=NULL;
+
+
+			ll n;
+			cin>>n;
+			// cout<<"Hwkjkl";
+			
+			for(ll i=1;i<=n;i++)
+			{
+				//run for taking every input
+				ll data;
+				cin>>data;
+
+				//creating new node
+				Node * temp =new Node();
+				temp->data=data;
+				temp->next=NULL;
+				
+
+			
+
+				if(head==NULL)
+				head=temp;
+				else {
+				Node *start=head;
+
+				while(start->next!=NULL)
+				{
+					// cout<<start->data<<endl;
+
+					start=start->next;
+				}
+				start->next=temp;
+				}
+				
+			}
+			Node *start=head;
+
+				while(start->next!=NULL)
+				{
+					cout<<start->data<<endl;
+
+					start=start->next;
+				}
+				cout<<start->data<<endl;
+
+
+			return 0;
+		 }	
+
+
